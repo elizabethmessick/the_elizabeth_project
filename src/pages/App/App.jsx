@@ -6,8 +6,13 @@ import {
 import './App.css';
 import userService from '../../utils/userService';
 import NavBar from '../../components/NavBar/NavBar';
+import Welcome from '../../pages/Welcome/Welcome';
+import Resources from '../../pages/Resources/Resources';
+import ProfilePage from '../../pages/ProfilePage/ProfilePage';
+import LiveChat from '../../pages/LiveChat/LiveChat';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
+
 
 class App extends Component {
   constructor(props) {
@@ -36,8 +41,15 @@ class App extends Component {
   render() {
     return (
       <div>
-        <NavBar />
+        <NavBar
+          user={this.state.user}
+          handleLogout={this.handleLogout}
+        />
         <Switch>
+          <Route exact path="/" component={Welcome} />
+          <Route path="/resources" component={Resources} />
+          <Route path="/profilepage" component={ProfilePage} />
+          <Route path="/livechat" component={LiveChat} />
           <Route exact path='/signup' render={(props) =>
             <SignupPage
               {...props}
@@ -57,17 +69,3 @@ class App extends Component {
 }
 
 export default App;
-
-{/* <Route exact path="/" component={Welcome} />
-            <Route path="/resources" component={Resources} />
-            <Route path="/profilepage" component={ProfilePage} />
-            <Route path="/signup" component={SignupPage} />
-            <Route path="/login" component={LoginPage} />
-            <Route path="/livechat" component={LiveChat} /> */}
-
-//             import Welcome from '../../pages/Welcome/Welcome';
-// import Resources from '../../pages/Resources/Resources';
-// import SignupPage from '../../pages/SignupPage/SignupPage';
-// import LoginPage from '../../pages/LoginPage/LoginPage';
-// import ProfilePage from '../../pages/ProfilePage/ProfilePage';
-// import LiveChat from '../../pages/LiveChat/LiveChat';

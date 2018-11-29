@@ -18,7 +18,7 @@ function logout() {
 
 function login(user) {
     return userAPI.login(user)
-        .then(({ token }) => tokenService.setToken(token));
+        .then(token => tokenService.setToken(token));
 }
 
 export default {
