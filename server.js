@@ -2,8 +2,12 @@ var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
+var http = require('http');
+
 
 var app = express();
+var httpServer = http.Server(app);
+require('./io')(httpServer);
 
 require('dotenv').config();
 require('./config/database');
@@ -25,6 +29,6 @@ app.get('/*', function (req, res) {
 
 var port = process.env.PORT || 3001;
 
-app.listen(port, function () {
-    console.log(`Express app running on port ${port}`)
+httpServer.listen(port, function () {
+    console.log(`listening on port ${port}`);
 });
