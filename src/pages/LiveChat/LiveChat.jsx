@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import socket from '../../utils/socket';
+import './LiveChat.css';
 
 class LiveChat extends Component {
     state = {

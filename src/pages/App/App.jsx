@@ -12,30 +12,37 @@ import ProfilePage from '../../pages/ProfilePage/ProfilePage';
 import LiveChat from '../../pages/LiveChat/LiveChat';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
+import ProfileForm from '../../components/ProfileForm/ProfileForm';
 
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      profile: null
     };
   }
 
   handleLogout = () => {
     userService.logout();
-    this.setState({ user: null });
+    this.setState({ user: null, profile: null });
   }
 
-  handleSignuporLogin = () => {
+  handleSignuporLogin = () =>
+    this.setState({ user: userService.getUser(), profile: userService.getUser().profile });
+
+
+  handleCreateProfile = () => {
     this.setState({ user: userService.getUser() });
   }
+
+  setProfile = (profile) => this.setState({ profile })
+
 
   /*---------- Lifecycle Methods ----------*/
 
   componentDidMount() {
-    let user = userService.getUser();
-    this.setState({ user });
+    this.setState({ user: userService.getUser(), profile: userService.getUser().profile });
   }
 
   render() {
@@ -62,6 +69,10 @@ class App extends Component {
               handleSignuporLogin={this.handleSignuporLogin}
             />
           } />
+          <Route exact path="/createprofile" component={() =>
+            <ProfileForm profile={this.state.profile} setProfile={this.setProfile} user={this.state.user} />}
+          />
+
         </Switch>
       </div>
     );

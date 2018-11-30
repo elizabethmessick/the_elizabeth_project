@@ -18,6 +18,7 @@ app.use(express.json());
 app.use(require('./config/auth'));
 
 app.use('/api/users', require('./routes/api/users'));
+app.use('/api/profiles', require('./routes/api/profiles'));
 
 
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));

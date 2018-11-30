@@ -29,6 +29,7 @@ function login(user) {
         .then(({ token }) => token);
 }
 
+
 export default {
     signup,
     login

@@ -7,7 +7,7 @@ import {
 
 const NavBar = (props) => {
     let nav = props.user ?
-        <div>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <NavLink to="/profilepage" activeStyle={{
                 fontWeight: "bold",
                 color: "red"
@@ -18,13 +18,17 @@ const NavBar = (props) => {
                 color: "red"
             }}>Live Chat</NavLink>{' '}
             &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-                    <NavLink to="" activeStyle={{
+            <NavLink to="/createprofile" activeStyle={{
+                fontWeight: "bold",
+                color: "red"
+            }}>Become a Supporter</NavLink>{' '}
+            &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+            <NavLink to="" activeStyle={{
                 fontWeight: "bold",
                 color: "red"
             }} onClick={props.handleLogout}>LOG OUT</NavLink>{' '}
             <span className='NavBar-welcome'>WELCOME, {props.user.name}</span>
-
-        </div>
+        </nav>
         :
         <div>
             &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -58,3 +62,4 @@ const NavBar = (props) => {
 };
 
 export default NavBar;
+
