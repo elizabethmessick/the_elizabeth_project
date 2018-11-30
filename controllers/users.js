@@ -31,6 +31,12 @@ function getUser(req, res) {
     })
 }
 
+function getProfile(req, res) {
+    User.findById(req.user._id).then(user => {
+        return res.json(user);
+    })
+}
+
 
 
 
@@ -47,5 +53,6 @@ function createJWT(user) {
 module.exports = {
     signup,
     login,
-    getUser
+    getUser,
+    getProfile
 };

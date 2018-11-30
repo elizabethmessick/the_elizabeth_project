@@ -8,7 +8,7 @@ import userService from '../../utils/userService';
 import NavBar from '../../components/NavBar/NavBar';
 import Welcome from '../../pages/Welcome/Welcome';
 import Resources from '../../pages/Resources/Resources';
-import ProfilePage from '../../pages/ProfilePage/ProfilePage';
+import SupportersPage from '../../pages/SupportersPage/SupportersPage';
 import LiveChat from '../../pages/LiveChat/LiveChat';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
@@ -34,22 +34,16 @@ class App extends Component {
     this.setState({ user: userService.getUser() });
 
 
-  handleCreateProfile = async () => {
-    var user = await profileService.getUserById(this.state.user._id);
-    this.setState({ user: user });
+  handleCreateProfile = async (user) => {
+    this.setState({ user });
   }
-
-  // setProfile = (profile) => this.setState({ profile })
-
 
   /*---------- Lifecycle Methods ----------*/
 
   async componentDidMount() {
     const user = userService.getUser();
-    const profile = user ? await profileService.getUserById(user._id) : null;
+    const profile = user ? await profileService.getProfile() : null;
     this.setState({ user, profile });
-
-
   }
 
   render() {
@@ -62,7 +56,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Welcome} />
           <Route path="/resources" component={Resources} />
-          <Route path="/profilepage" component={ProfilePage}
+          <Route path="/supporters" component={SupportersPage}
             profiles={this.state.profile}
           />
           <Route path="/livechat" component={LiveChat} />
@@ -78,10 +72,10 @@ class App extends Component {
               handleSignuporLogin={this.handleSignuporLogin}
             />
           } />
-          <Route exact path="/createprofile" component={() =>
-            <ProfileForm profile={this.state.profile}
+          <Route exact path="/profile" render={(props) =>
+            <ProfileForm
               handleCreateProfile={this.handleCreateProfile}
-              user={this.state.user}
+              history={props.history}
             />}
           />
 

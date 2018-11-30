@@ -15,7 +15,7 @@ class ProfileForm extends Component {
     }
 
     componentDidMount() {
-        profileService.getUserById(this.props.user._id)
+        profileService.getProfile()
             .then(user => this.setState({
                 profile: user.profile,
                 name: user.profile ? user.profile.name : '',
@@ -31,13 +31,15 @@ class ProfileForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        profileService.create(this.state, this.props.user._id)
+        delete this.state.profile;
+        delete this.state.edit;
+        profileService.create(this.state)
             .then(res => {
                 res.json()
                     .then(user => {
-                        this.props.handleCreateProfile();
-                        this.setState({ profile: user.profile, edit: false })
-                    })
+                        this.props.handleCreateProfile(user);
+                        this.props.history.push('/supporters');
+                    });
             })
     }
 
@@ -47,10 +49,9 @@ class ProfileForm extends Component {
         console.log(this.state)
         return (
             <div>
-                <header className="header-footer">Profile</header>
                 {this.state.profile && !this.state.edit
                     ?
-                    <ProfileCard user={this.props.user} profile={this.state.profile} toggleEdit={this.toggleEdit} />
+                    <ProfileCard profile={{ profile: this.state.profile }} toggleEdit={this.toggleEdit} />
                     :
                     <form className="form-horizontal">
                         <div className="form-group">
@@ -60,13 +61,13 @@ class ProfileForm extends Component {
                         </div>
                         <div className="form-group">
                             <div className="col-sm-12">
-                                <input type="story" className="form-control" placeholder="story" value={this.state.story} onChange={(e) => this.handleChange('story', e)} />
+                                <textarea type="story" className="form-control" placeholder="story" value={this.state.story} onChange={(e) => this.handleChange('story', e)} />
                             </div>
                         </div>
                         <div className="form-group">
                             <div className="col-sm-12 text-center">
                                 <button className="btn btn-default" onClick={this.handleSubmit}>Create Profile</button>&nbsp;&nbsp;&nbsp;
-            <Link to='/'>Cancel</Link>
+                                <Link to='/'>Cancel</Link>
                             </div>
                         </div>
                     </form>

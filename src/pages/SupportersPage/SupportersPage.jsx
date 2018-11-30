@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
 import profileService from '../../utils/profileService';
 import ProfileCard from '../../components/ProfileCard/ProfileCard';
+import './SupportersPage.css';
 
-class ProfilePage extends Component {
+
+class SupportersPage extends Component {
     constructor(props) {
         super(props)
-        console.log('props', props)
         this.state = {
             profiles: []
         }
     }
     async componentDidMount() {
         var allProfiles = await profileService.getAllProfiles();
-        console.log(allProfiles);
         this.setState({ profiles: allProfiles });
     }
 
     render() {
         var profiles = this.state.profiles;
         return (
-            <div>
+            <div className="SupportersPage">
                 {profiles.map((profile, index) => <ProfileCard profile={profile} key={index} />)}
             </div>
         );
@@ -27,5 +27,4 @@ class ProfilePage extends Component {
     }
 }
 
-
-export default ProfilePage;
+export default SupportersPage;

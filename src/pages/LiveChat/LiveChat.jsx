@@ -29,7 +29,6 @@ class LiveChat extends Component {
     render() {
         return (
             <div className="LiveChat">
-                <header className="LiveChat-header">Real-time Chat Test</header>
                 <main>
                     <section>
                         <input className='form-control' type="text" name='from' value={this.state.from} onChange={this.handleChange} /><br />

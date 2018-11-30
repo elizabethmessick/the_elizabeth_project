@@ -5,16 +5,24 @@ function getUser() {
     return tokenService.getUserFromToken();
 }
 
-function getUserById(id) {
-    return fetch(`/api/users/${id}`)
+function getProfile() {
+    return fetch(`/api/users/profile`, {
+        method: 'GET',
+        headers: new Headers({
+            'Authorization': 'Bearer ' + tokenService.getToken()
+        })
+    })
         .then(res => res.json())
 }
 
-function create(profile, userId) {
+function create(profile) {
     return fetch('/api/profiles', {
         method: 'POST',
-        headers: new Headers({ 'Content-Type': 'application/json' }),
-        body: JSON.stringify({ profile, userId })
+        headers: new Headers({
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + tokenService.getToken()
+        }),
+        body: JSON.stringify({ profile })
     })
 }
 
@@ -36,7 +44,7 @@ function deleteProfile(userId) {
 export default {
     create,
     getUser,
-    getUserById,
+    getProfile,
     getAllProfiles,
     deleteProfile
 }

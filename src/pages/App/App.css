@@ -32,8 +32,8 @@
   }
 }
 
-body {
-  text-align: center; 
-  color: purple;
+* {
+  text-align: center;
+  margin: auto;
 }
 
