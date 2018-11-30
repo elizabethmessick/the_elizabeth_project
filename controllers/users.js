@@ -25,7 +25,12 @@ function login(req, res) {
     }).catch(err => res.status(401).json(err));
 }
 
-
+function getUser(req, res) {
+    User.findById(req.params.id).exec().then(user => {
+        console.log(user)
+        return res.json(user);
+    })
+}
 
 /*----- Helper Functions -----*/
 
@@ -39,5 +44,6 @@ function createJWT(user) {
 
 module.exports = {
     signup,
-    login
+    login,
+    getUser
 };

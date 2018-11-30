@@ -19,30 +19,31 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      profile: null
+      profile: null,
+      user: {}
     };
   }
 
   handleLogout = () => {
     userService.logout();
-    this.setState({ user: null, profile: null });
+    this.setState({ user: null });
   }
 
   handleSignuporLogin = () =>
-    this.setState({ user: userService.getUser(), profile: userService.getUser().profile });
+    this.setState({ user: userService.getUser() });
 
 
   handleCreateProfile = () => {
     this.setState({ user: userService.getUser() });
   }
 
-  setProfile = (profile) => this.setState({ profile })
+  // setProfile = (profile) => this.setState({ profile })
 
 
   /*---------- Lifecycle Methods ----------*/
 
   componentDidMount() {
-    this.setState({ user: userService.getUser(), profile: userService.getUser().profile });
+    this.setState({ user: userService.getUser(), profile: userService.getUser() && userService.getUser().profile });
   }
 
   render() {

@@ -5,6 +5,10 @@ function getUser() {
     return tokenService.getUserFromToken();
 }
 
+function getUser1(id) {
+    return fetch(`/api/users/${id}`)
+}
+
 function create(profile, userId) {
     console.log(profile);
     return fetch('/api/profiles', {
@@ -12,15 +16,12 @@ function create(profile, userId) {
         headers: new Headers({ 'Content-Type': 'application/json' }),
         body: JSON.stringify(Object.assign(profile, { userId }))
     })
-    //     .then(res => res.json())
-    //     .then(profile => {
-    //         this.setState({ profile });
-    //     });
 }
 
 
 export default {
     create,
-    getUser
+    getUser,
+    getUser1
 }
 
