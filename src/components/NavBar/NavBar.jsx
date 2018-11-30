@@ -18,10 +18,24 @@ const NavBar = (props) => {
                 color: "red"
             }}>Live Chat</NavLink>{' '}
             &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-            <NavLink to="/createprofile" activeStyle={{
-                fontWeight: "bold",
-                color: "red"
-            }}>Become a Supporter</NavLink>{' '}
+
+            {props.user.profile ?
+
+                <NavLink to="/createprofile" activeStyle={{
+                    fontWeight: "bold",
+                    color: "red"
+                }}>View Profile</NavLink>
+
+                :
+
+                <NavLink to="/createprofile" activeStyle={{
+                    fontWeight: "bold",
+                    color: "red"
+                }}>Become a Supporter</NavLink>
+            }
+            {' '}
+
+
             &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
             <NavLink to="" activeStyle={{
                 fontWeight: "bold",

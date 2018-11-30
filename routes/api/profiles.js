@@ -1,11 +1,12 @@
 var express = require('express');
 var router = express.Router();
-var usersCtrl = require('../../controllers/profiles');
+var profilesCtrl = require('../../controllers/profiles');
 
 /*---------- Public Routes ----------*/
 
-router.post('/', usersCtrl.createProfile);
-
+router.post('/', profilesCtrl.createProfile);
+router.get('/all', profilesCtrl.getAllProfiles);
+router.post('/delete', profilesCtrl.deleteProfile);
 
 /*---------- Protected Routes ----------*/
 

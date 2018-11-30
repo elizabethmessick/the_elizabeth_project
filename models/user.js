@@ -4,7 +4,10 @@ var bcrypt = require('bcrypt');
 const SALT_ROUNDS = 6;
 
 var profileSchema = new mongoose.Schema({
-    name: String,
+    name: {
+        type: String,
+        default: 'Anonymous'
+    },
     story: String
 })
 

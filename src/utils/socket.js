@@ -1,5 +1,5 @@
-var window = require('socket.io-client');
+var io = require('socket.io-client');
 
-const socket = window();
+const socket = io();
 
 export default socket;

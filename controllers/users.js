@@ -27,10 +27,12 @@ function login(req, res) {
 
 function getUser(req, res) {
     User.findById(req.params.id).exec().then(user => {
-        console.log(user)
         return res.json(user);
     })
 }
+
+
+
 
 /*----- Helper Functions -----*/
 

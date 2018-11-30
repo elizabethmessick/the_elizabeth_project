@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import profileService from '../../utils/profileService';
-import userService from '../../utils/userService';
+import ProfileCard from '../../components/ProfileCard/ProfileCard';
 
 class ProfileForm extends Component {
     constructor(props) {
@@ -15,15 +15,12 @@ class ProfileForm extends Component {
     }
 
     componentDidMount() {
-        profileService.getUser1(this.props.user._id)
-            .then(res => {
-                res.json()
-                    .then(user => this.setState({
-                        profile: user.profile,
-                        name: user.profile ? user.profile.name : '',
-                        story: user.profile ? user.profile.story : ''
-                    }))
-            })
+        profileService.getUserById(this.props.user._id)
+            .then(user => this.setState({
+                profile: user.profile,
+                name: user.profile ? user.profile.name : '',
+                story: user.profile ? user.profile.story : ''
+            }))
     }
 
     handleChange = (field, e) => {
@@ -34,11 +31,11 @@ class ProfileForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        profileService.create(this.state, this.props.user)
+        profileService.create(this.state, this.props.user._id)
             .then(res => {
                 res.json()
                     .then(user => {
-                        // this.props.setProfile(user.profile);
+                        this.props.handleCreateProfile();
                         this.setState({ profile: user.profile, edit: false })
                     })
             })
@@ -53,7 +50,7 @@ class ProfileForm extends Component {
                 <header className="header-footer">Profile</header>
                 {this.state.profile && !this.state.edit
                     ?
-                    <ProfileCard profile={this.state.profile} toggleEdit={this.toggleEdit} />
+                    <ProfileCard user={this.props.user} profile={this.state.profile} toggleEdit={this.toggleEdit} />
                     :
                     <form className="form-horizontal">
                         <div className="form-group">
@@ -79,16 +76,5 @@ class ProfileForm extends Component {
     }
 };
 
-
-const ProfileCard = (props) => {
-    console.log(props)
-    return (
-        <div>
-            <p>{props.profile && props.profile.name}</p>
-            <p>{props.profile && props.profile.story}</p>
-            <button onClick={props.toggleEdit}>Edit</button>
-        </div>
-    )
-}
 
 export default ProfileForm;
