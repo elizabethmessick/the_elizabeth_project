@@ -1,4 +1,6 @@
 .SupportersPage {
     display: flex; 
     flex-wrap: wrap;
+    width: 85vw;
+
 }

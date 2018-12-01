@@ -66,7 +66,7 @@ class ProfileForm extends Component {
                         </div>
                         <div className="form-group">
                             <div className="col-sm-12 text-center">
-                                <button className="btn btn-default" onClick={this.handleSubmit}>Create Profile</button>&nbsp;&nbsp;&nbsp;
+                                <button className="btn btn-default" onClick={this.handleSubmit}>Submit</button>&nbsp;&nbsp;&nbsp;
                                 <Link to='/'>Cancel</Link>
                             </div>
                         </div>
