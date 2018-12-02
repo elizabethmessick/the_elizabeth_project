@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import profileService from '../../utils/profileService';
-import ProfileCard from '../../components/ProfileCard/ProfileCard';
+import SupporterProfileCard from '../../components/SupporterProfileCard/SupporterProfileCard';
 import './SupportersPage.css';
 
 
@@ -20,7 +20,7 @@ class SupportersPage extends Component {
         var profiles = this.state.profiles;
         return (
             <div className="SupportersPage">
-                {profiles.map((profile, index) => <ProfileCard profile={profile} key={index} />)}
+                {profiles.map((profile, index) => <SupporterProfileCard profile={profile} key={index} />)}
             </div>
         );
 
