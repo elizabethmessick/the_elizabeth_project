@@ -1,0 +1,16 @@
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #FFC75F;
+    color: white;
+    text-align: center;
+    font-family: 'Sacramento', cursive;
+    font-size: 25px; 
+  }
+
+  .rose-footer {
+    height: 20px;
+    width: 20px;
+  }

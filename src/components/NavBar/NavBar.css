@@ -27,6 +27,7 @@ font-weight: 500;
   justify-content: center;
   background-color: #FFC75F;
   color: #e42838;
+  font-size: 18px;
 }
 
 .NavBar-link {
@@ -37,7 +38,6 @@ font-weight: 500;
 }
 
 .selected {
-  /* background-color: #59fcff; */
   color: red;
   border-radius: 30%;
 }

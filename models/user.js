@@ -8,6 +8,7 @@ var profileSchema = new mongoose.Schema({
         type: String,
         default: 'Anonymous'
     },
+    img: String,
     story: String
 })
 

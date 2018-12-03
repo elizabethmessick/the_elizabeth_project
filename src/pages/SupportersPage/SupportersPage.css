@@ -1,8 +1,12 @@
-.SupportersPage {
+.SupporterProfilesPage {
     display: flex; 
     flex-wrap: wrap;
     padding: 20px;
     width: 85vw;
+}
+
+.title {
+    text-align: center;
 }
 
 .avatar {
@@ -10,3 +14,4 @@
     height: 200px;
     border-radius: 50%;
 }
+

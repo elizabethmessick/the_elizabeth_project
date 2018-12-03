@@ -20,7 +20,12 @@ class SupportersPage extends Component {
         var profiles = this.state.profiles;
         return (
             <div className="SupportersPage">
-                {profiles.map((profile, index) => <SupporterProfileCard profile={profile} key={index} />)}
+                <div className="title">
+                    <h1>Chat with other victims. <br /> We are here to help!</h1>
+                </div>
+                <div className="SupporterProfilesPage">
+                    {profiles.map((profile, index) => <SupporterProfileCard profile={profile} key={index} />)}
+                </div>
             </div>
         );
 

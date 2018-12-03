@@ -13,6 +13,7 @@ import LiveChat from '../../pages/LiveChat/LiveChat';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import ProfileForm from '../../components/ProfileForm/ProfileForm';
+import Footer from '../../components/Footer/Footer';
 import profileService from '../../utils/profileService';
 
 
@@ -80,6 +81,7 @@ class App extends Component {
           />
 
         </Switch>
+        <Footer />
       </div>
     );
   }

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import profileService from '../../utils/profileService';
 import ProfileCard from '../../components/ProfileCard/ProfileCard';
+import './ProfileForm.css';
+
 
 class ProfileForm extends Component {
     constructor(props) {
@@ -9,6 +11,7 @@ class ProfileForm extends Component {
         this.state = {
             name: '',
             story: '',
+            img: '',
             profile: null,
             edit: false
         }
@@ -51,9 +54,14 @@ class ProfileForm extends Component {
             <div>
                 {this.state.profile && !this.state.edit
                     ?
-                    <ProfileCard profile={{ profile: this.state.profile }} toggleEdit={this.toggleEdit} />
+                    <ProfileCard profile={{ profile: this.state.profile }} img={this.state.img} toggleEdit={this.toggleEdit} />
                     :
                     <form className="form-horizontal" id="ProfileForm">
+                        <div className="form-group">
+                            <div className="col-sm-12 img-form">
+                                <input name="img" className="form-control" placeholder="Image" value={this.state.img} onChange={(e) => this.handleChange('img', e)} />
+                            </div>
+                        </div>
                         <div className="form-group">
                             <div className="col-sm-12">
                                 <input type="name" className="form-control" placeholder="name" value={this.state.name} onChange={(e) => this.handleChange('name', e)} />
@@ -61,7 +69,7 @@ class ProfileForm extends Component {
                         </div>
                         <div className="form-group">
                             <div className="col-sm-12">
-                                <textarea type="story" className="form-control" placeholder="story" value={this.state.story} onChange={(e) => this.handleChange('story', e)} maxLength="200" />
+                                <textarea type="story" id="story" className="form-control" placeholder="story" value={this.state.story} onChange={(e) => this.handleChange('story', e)} maxLength="200" required />
                             </div>
                         </div>
                         <div className="form-group">

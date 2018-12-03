@@ -1,6 +1,9 @@
 .form-horizontal {
-    background-color: red;
     width: 600px;
     padding: 20px;
     margin-top: 20px;
+}
+
+#story {
+height: 100px;
 }

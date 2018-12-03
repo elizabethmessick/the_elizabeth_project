@@ -3,7 +3,7 @@ import './Resources.css';
 
 const Resources = (props) => (
     <div className="Resources">
-        <h1>Resources</h1>
+        <h1>Victim Resources</h1>
         <p><a href="http://www.cybercivilrights.org/faqs-usvictims/" target="_blank" rel="noopener noreferrer">FAQs for US NCP Victims</a> -Frequently asked questions and their answers for victims of NCP residing in the US.</p>
 
         <p><a href="http://www.cybercivilrights.org/ccri-crisis-helpline/" target="_blank" rel="noopener noreferrer">CCRI National Helpline (844-878-2274)</a>– Free, confidential support available 24/7 for victims of nonconsensual pornography (NCP).</p>

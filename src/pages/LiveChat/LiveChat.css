@@ -3,7 +3,7 @@
     width: 400px;
     color: black;
     padding: 4em;
-    background-color: red;
+    background-color: rgba(243, 31, 31);
     border: 10px solid #FFC75F;
 }
 
@@ -24,7 +24,3 @@ hr {
     border-radius: 50%;
 }
 
-/* .live-chat-title {
-    display: flex;
-    justify-content: flex-start;
-} */
