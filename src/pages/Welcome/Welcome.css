@@ -6,3 +6,9 @@ margin: auto;
 .Welcome {
     text-align: center;
 }
+
+.elizabethPic {
+    height: 200px;
+    width: 300px;
+    border-radius: 50%;
+}

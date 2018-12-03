@@ -21,6 +21,7 @@
     BOX-SHADOW: 2px 2px 6px lightslategray;
     border-radius: 6px;
     margin-top: 10px;
+    margin: auto;
 }
 
 .CardStory {
@@ -30,4 +31,8 @@
 
 #chat-button {
     color: white;
+}
+
+.image-container {
+    text-align: center;
 }

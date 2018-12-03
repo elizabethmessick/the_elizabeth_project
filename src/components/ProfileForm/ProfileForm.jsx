@@ -53,7 +53,7 @@ class ProfileForm extends Component {
                     ?
                     <ProfileCard profile={{ profile: this.state.profile }} toggleEdit={this.toggleEdit} />
                     :
-                    <form className="form-horizontal">
+                    <form className="form-horizontal" id="ProfileForm">
                         <div className="form-group">
                             <div className="col-sm-12">
                                 <input type="name" className="form-control" placeholder="name" value={this.state.name} onChange={(e) => this.handleChange('name', e)} />
@@ -61,7 +61,7 @@ class ProfileForm extends Component {
                         </div>
                         <div className="form-group">
                             <div className="col-sm-12">
-                                <textarea type="story" className="form-control" placeholder="story" value={this.state.story} onChange={(e) => this.handleChange('story', e)} />
+                                <textarea type="story" className="form-control" placeholder="story" value={this.state.story} onChange={(e) => this.handleChange('story', e)} maxLength="200" />
                             </div>
                         </div>
                         <div className="form-group">

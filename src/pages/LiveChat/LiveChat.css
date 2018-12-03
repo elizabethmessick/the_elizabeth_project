@@ -1,3 +1,30 @@
 .LiveChat {
+    margin-top: 40px;
     width: 400px;
+    color: black;
+    padding: 4em;
+    background-color: red;
+    border: 10px solid #FFC75F;
 }
+
+.panel-heading {
+    font-weight: bold;
+}
+
+article div {
+    padding: 10px;
+} 
+
+hr {
+    border: 1px solid #FFC75F;
+}
+.live-chat-avatar {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+/* .live-chat-title {
+    display: flex;
+    justify-content: flex-start;
+} */

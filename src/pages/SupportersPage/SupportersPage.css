@@ -1,6 +1,12 @@
 .SupportersPage {
     display: flex; 
     flex-wrap: wrap;
+    padding: 20px;
     width: 85vw;
+}
 
+.avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
 }
