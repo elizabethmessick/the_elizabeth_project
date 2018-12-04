@@ -1,10 +1,11 @@
 ## The Elizabeth Project  
-![Image of game play screen]()
+![Image of home screen]()
 
 ## Description
-- The Elizabeth Project: 
+- [The Elizabeth Project](https://the-elizabeth-project.herokuapp.com/): An app dedicated to help support victims of revenge porn. The Elizabeth Project uses socket.io for real time communication with other victims and gives access to create and update a supporter profile. 
 
-![Image of winning screen]()
+
+![Image of live chat]()
 
 ## Technologies Used 
 - Mongo (Mongoose)
@@ -22,11 +23,8 @@
 
 ## Getting Started 
 [Click to here for deployed app!](https://the-elizabeth-project.herokuapp.com/)
-
-- To start game, you must log in using a gmail account and then you must click on a category
-- Once a category is picked,a 3 second countdown will start the game. The game can be   anywhere from 30 seconds to 3 minutes long.
-- When the game is over you can click "play again?" button to play again  
-![Image of initial screen]()
+  
+![Image of supporters screen]()
 
 ## API endpoints
 - All Profiles: /api/profiles/all
