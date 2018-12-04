@@ -1,11 +1,11 @@
 ## The Elizabeth Project  
-![Image of home screen]()
+![Image of profile screen](https://i.imgur.com/8uof4lY.png)
 
 ## Description
 - [The Elizabeth Project](https://the-elizabeth-project.herokuapp.com/): An app dedicated to help support victims of revenge porn. The Elizabeth Project uses socket.io for real time communication with other victims and gives access to create and update a supporter profile. 
 
 
-![Image of live chat]()
+![Image of live chat](https://i.imgur.com/sLJGSkr.png)
 
 ## Technologies Used 
 - Mongo (Mongoose)
@@ -24,7 +24,7 @@
 ## Getting Started 
 [Click to here for deployed app!](https://the-elizabeth-project.herokuapp.com/)
   
-![Image of supporters screen]()
+![Image of supporters screen](https://i.imgur.com/gM8adbx.png)
 
 ## API endpoints
 - All Profiles: /api/profiles/all
