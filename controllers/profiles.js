@@ -15,17 +15,8 @@ function getAllProfiles(req, res) {
     })
 }
 
-function deleteProfile(req, res) {
-    const { userId } = req.body;
-    User.findOne({ _id: userId }).exec().then(user => {
-        user.profile = null
-        user.save()
-        return res.json(user);
-    })
-}
 
 module.exports = {
     createProfile,
-    getAllProfiles,
-    deleteProfile
+    getAllProfiles
 };

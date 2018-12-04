@@ -34,8 +34,6 @@ class ProfileForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        delete this.state.profile;
-        delete this.state.edit;
         profileService.create(this.state)
             .then(res => {
                 res.json()
@@ -59,7 +57,7 @@ class ProfileForm extends Component {
                     <form className="form-horizontal" id="ProfileForm">
                         <div className="form-group">
                             <div className="col-sm-12 img-form">
-                                <input name="img" className="form-control" placeholder="Image" value={this.state.img} onChange={(e) => this.handleChange('img', e)} />
+                                <input name="img" className="form-control" placeholder="Image URL" value={this.state.img} onChange={(e) => this.handleChange('img', e)} />
                             </div>
                         </div>
                         <div className="form-group">

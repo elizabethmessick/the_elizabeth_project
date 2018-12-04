@@ -1,6 +1,6 @@
 import React from 'react';
 import './Welcome.css';
-import elizabethPic from '../../img/elizabeth.jpeg';
+import elizabethPic from '../../img/elizabeth.jpg';
 
 
 const Welcome = (props) => (

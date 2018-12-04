@@ -6,7 +6,6 @@ var profilesCtrl = require('../../controllers/profiles');
 
 router.post('/', profilesCtrl.createProfile);
 router.get('/all', profilesCtrl.getAllProfiles);
-router.post('/delete', profilesCtrl.deleteProfile);
 
 /*---------- Protected Routes ----------*/
 
