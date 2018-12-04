@@ -12,7 +12,6 @@ class LoginForm extends Component {
 
     handleChange = (field, e) => {
         this.setState({
-            // Using ES2015 Computed Property Names
             [field]: e.target.value
         });
     }

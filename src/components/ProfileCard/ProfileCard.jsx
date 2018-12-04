@@ -22,7 +22,6 @@ const ProfileCard = (props) => {
                 }
                 <p className="CardStory">{props.profile.profile && props.profile.profile.story}</p>
                 <button id="edit-button" onClick={props.toggleEdit}>Edit</button>
-                {/* <button onClick={() => profileService.deleteProfile(props.user && props.user._id)}>Delete</button> */}
             </div>
         </div>
 

@@ -17,7 +17,7 @@ class SupportersPage extends Component {
     }
 
     render() {
-        var profiles = this.state.profiles;
+        var profiles = this.state.profiles.reverse();
         return (
             <div className="SupportersPage">
                 <div className="title">

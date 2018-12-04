@@ -7,5 +7,4 @@ const Footer = (props) => {
         <footer>The Elizabeth Project <img className="rose-footer" src={rose} alt="rose" /> </footer>
     )
 }
-
 export default Footer; 

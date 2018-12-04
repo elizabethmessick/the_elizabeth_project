@@ -10,7 +10,6 @@ import rose from '../../img/rose.png';
 const NavBar = (props) => {
     let nav = props.user ?
 
-        // <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <nav className='NavBar'>
             <NavLink exact to="/" className='NavBar-link' activeClassName="selected">Home</NavLink>
             <NavLink to="/resources" className='NavBar-link' activeClassName="selected">Resources</NavLink>
