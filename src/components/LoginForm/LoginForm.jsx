@@ -21,7 +21,7 @@ class LoginForm extends Component {
         userService.login(this.state)
             .then(() => {
                 this.props.handleSignuporLogin();
-                this.props.history.push('/');
+                this.props.history.push('/supporters');
             })
             // invalid credentials - don't alert in YOUR app :)
             .catch(err => alert('Invalid Credentials!'));
