@@ -1,4 +1,6 @@
 ## The Elizabeth Project  
+![Image of home screen](https://i.imgur.com/v5GGAqh.png)
+
 ![Image of profile screen](https://i.imgur.com/8uof4lY.png)
 
 ## Description
